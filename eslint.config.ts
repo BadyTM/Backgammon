@@ -13,10 +13,10 @@ configureVueProject({ scriptLangs: ["ts"] });
 export default defineConfigWithVueTs(
   {
     name: "app/files-to-lint",
-    files: ["**/*.{ts,mts,tsx,vue}"],
+    files: ["**/*.{ts,vue}"],
     languageOptions: {
       parserOptions: {
-        project: "./tsconfig.json",
+        project: "./tsconfig.app.json",
         tsconfigRootDir: import.meta.dirname,
       },
     },
@@ -24,7 +24,7 @@ export default defineConfigWithVueTs(
 
   globalIgnores(["**/dist/**", "**/dist-ssr/**", "**/coverage/**", "eslint.config.*"]),
 
-  pluginVue.configs["flat/essential"],
+  pluginVue.configs["flat/recommended"],
   vueTsConfigs.recommended,
 
   {
